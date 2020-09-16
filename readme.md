@@ -23,4 +23,4 @@ import annoyingLibrary
 logging.getLogger('annoyingLibrary').addHandler(logging.NullHandler())
 ```
 
-The most useful article I found to decifer Python logging was [Fang-Pen's coding note - Good logging practice in Python](https://fangpenlin.com/posts/2012/08/26/good-logging-practice-in-python/)
+The most useful article I found to decipher Python logging was [Fang-Pen's coding note - Good logging practice in Python](https://fangpenlin.com/posts/2012/08/26/good-logging-practice-in-python/)
