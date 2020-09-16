@@ -1,0 +1,34 @@
+version: 1
+formatters:
+  #format of log message time - module name - log level - message
+  simple:
+    format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+handlers:
+  #log to concole
+  console:
+    class: logging.StreamHandler
+    level: DEBUG
+    formatter: simple
+    stream: ext://sys.stdout
+  #log to logtest.log file
+  file:
+    class: logging.FileHandler
+    level: DEBUG
+    filename: logtest.log
+    formatter: simple
+
+loggers:
+  #specific logging for all class/modules in pkg1
+  pkg1:
+    level: INFO
+    handlers: [console]
+    propagate: no
+  #specific logging for b module in pkg1
+  pkg1.b:
+    level: DEBUG
+    handlers: [console, file]
+    propagate: no
+#these defaults all logging to log to file and console handlers as defined above
+root:
+  level: DEBUG
+  handlers: [file, console]
